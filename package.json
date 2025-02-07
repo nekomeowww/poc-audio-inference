@@ -35,6 +35,9 @@
     "apps/**",
     "services/**"
   ],
+  "pnpm": {
+    "neverBuiltDependencies": []
+  },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged && pnpm typecheck"
   },
