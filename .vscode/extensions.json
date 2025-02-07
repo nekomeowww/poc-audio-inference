@@ -7,6 +7,9 @@
     "dbaeumer.vscode-eslint",
     "yzhang.markdown-all-in-one",
     "vitest.explorer",
-    "redhat.vscode-yaml"
+    "redhat.vscode-yaml",
+    "Vue.volar",
+    "antfu.goto-alias",
+    "lokalise.i18n-ally"
   ]
 }
