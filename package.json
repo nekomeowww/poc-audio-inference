@@ -5,10 +5,13 @@
   "packageManager": "pnpm@10.1.0",
   "license": "UNLICENSED",
   "scripts": {
-    "postinstall": "pnpx simple-git-hooks",
+    "dev": "pnpm -r --filter=./packages/* --filter=./apps/* --parallel run dev",
+    "stub": "pnpm -r --filter=./packages/* run stub",
+    "build": "pnpm -r --filter=./packages/* --filter=./apps/* run build",
     "lint": "eslint .",
     "typecheck": "pnpm -r --filter=./packages/* run typecheck",
-    "test:run": "vitest run"
+    "test:run": "vitest run",
+    "postinstall": "pnpx simple-git-hooks"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.1.1",
