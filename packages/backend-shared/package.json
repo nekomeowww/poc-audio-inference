@@ -1,0 +1,25 @@
+{
+  "name": "@streaming/backend-shared",
+  "type": "module",
+  "private": true,
+  "license": "UNLICENSED",
+  "exports": {
+    "./types": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/types/index.mjs",
+      "require": "./dist/types/index.cjs"
+    }
+  },
+  "main": "./dist/types/index.cjs",
+  "module": "./dist/types/index.mjs",
+  "types": "./dist/types/index.d.ts",
+  "scripts": {
+    "dev": "pnpm run stub",
+    "stub": "unbuild --stub",
+    "build": "unbuild",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "crossws": "^0.3.3"
+  }
+}

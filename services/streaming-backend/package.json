@@ -1,0 +1,18 @@
+{
+  "name": "@streaming/backend",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "listhen -w --ws --port 8080 ./src/index.ts",
+    "start": "listhen --ws --port 8080 ./src/index.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@guiiai/logg": "^1.0.7",
+    "@streaming/backend-shared": "workspace:^",
+    "crossws": "^0.3.3",
+    "defu": "^6.1.4",
+    "h3": "^1.14.0",
+    "listhen": "^1.9.0"
+  }
+}

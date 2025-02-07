@@ -12,6 +12,17 @@ import VueDevTools from 'vite-plugin-vue-devtools'
 import Layouts from 'vite-plugin-vue-layouts'
 
 export default defineConfig({
+  server: {
+    proxy: {
+      // Proxy WebSockets
+      '/ws': {
+        target: 'http://localhost:8080',
+        ws: true,
+        rewriteWsOrigin: true,
+        autoRewrite: true,
+      },
+    },
+  },
 
   plugins: [
     VueMacros({

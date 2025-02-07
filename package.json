@@ -5,11 +5,11 @@
   "packageManager": "pnpm@10.1.0",
   "license": "UNLICENSED",
   "scripts": {
-    "dev": "pnpm -r --filter=./packages/* --filter=./apps/* --parallel run dev",
+    "dev": "pnpm run stub && pnpm -r --filter=./packages/* --filter=./apps/* --filter=./services/* --parallel run dev",
     "stub": "pnpm -r --filter=./packages/* run stub",
-    "build": "pnpm -r --filter=./packages/* --filter=./apps/* run build",
+    "build": "pnpm -r --filter=./packages/* --filter=./apps/* --filter=./services/* run build",
     "lint": "eslint .",
-    "typecheck": "pnpm -r --filter=./packages/* run typecheck",
+    "typecheck": "pnpm -r --filter=./packages/* --filter=./apps/* --filter=./services/* run typecheck",
     "test:run": "vitest run",
     "postinstall": "pnpx simple-git-hooks"
   },
@@ -24,13 +24,15 @@
     "taze": "^18.4.0",
     "tsx": "^4.19.2",
     "typescript": "^5.7.3",
+    "unbuild": "^3.3.1",
     "vite": "^6.1.0",
     "vitest": "^3.0.5"
   },
   "workspaces": [
     "packages/*",
     "examples/**",
-    "apps/**"
+    "apps/**",
+    "services/**"
   ],
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged && pnpm typecheck"
