@@ -2,13 +2,14 @@
   "name": "streaming-audio-backend",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@10.1.0",
+  "packageManager": "pnpm@10.2.1",
   "license": "UNLICENSED",
   "scripts": {
     "dev": "pnpm run stub && pnpm -r --filter=./packages/* --filter=./apps/* --filter=./services/* --parallel run dev",
     "stub": "pnpm -r --filter=./packages/* run stub",
     "build": "pnpm -r --filter=./packages/* --filter=./apps/* --filter=./services/* run build",
     "lint": "eslint .",
+    "packages:stub": "pnpm -r --filter=./packages/* run stub",
     "typecheck": "pnpm -r --filter=./packages/* --filter=./apps/* --filter=./services/* run typecheck",
     "test:run": "vitest run",
     "postinstall": "pnpx simple-git-hooks"

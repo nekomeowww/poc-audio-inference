@@ -2,7 +2,7 @@
   "name": "@streaming/web",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@9.15.5",
+  "packageManager": "pnpm@10.2.1",
   "license": "UNLICENSED",
   "scripts": {
     "build": "vite build",
@@ -38,7 +38,7 @@
     "@vue-macros/volar": "^0.30.14",
     "@vueuse/motion": "^2.2.6",
     "unplugin-vue-components": "^28.0.0",
-    "unplugin-vue-macros": "^2.14.1",
+    "unplugin-vue-macros": "^2.14.2",
     "unplugin-vue-router": "^0.11.2",
     "vite-bundle-visualizer": "^1.2.1",
     "vite-plugin-vue-devtools": "^7.7.1",
