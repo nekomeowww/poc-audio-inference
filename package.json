@@ -1,0 +1,37 @@
+{
+  "name": "streaming-audio-backend",
+  "type": "module",
+  "private": true,
+  "packageManager": "pnpm@10.1.0",
+  "license": "UNLICENSED",
+  "scripts": {
+    "postinstall": "pnpx simple-git-hooks",
+    "lint": "eslint .",
+    "typecheck": "pnpm -r --filter=./packages/* run typecheck",
+    "test:run": "vitest run"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^4.1.1",
+    "@antfu/ni": "^23.3.1",
+    "@types/node": "^22.13.1",
+    "eslint": "^9.19.0",
+    "eslint-plugin-format": "^1.0.1",
+    "lint-staged": "^15.4.3",
+    "simple-git-hooks": "^2.11.1",
+    "taze": "^18.4.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.0",
+    "vitest": "^3.0.5"
+  },
+  "workspaces": [
+    "packages/*",
+    "examples/**"
+  ],
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged && pnpm typecheck"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}
