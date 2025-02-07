@@ -1,0 +1,16 @@
+version: "0.2"
+ignorePaths: []
+dictionaryDefinitions: []
+dictionaries: []
+words:
+  - defu
+  - demi
+  - formkit
+  - intlify
+  - ofetch
+  - unhead
+  - unocss
+  - unplugin
+  - vueuse
+ignoreWords: []
+import: []
