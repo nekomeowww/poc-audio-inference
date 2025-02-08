@@ -50,12 +50,12 @@ watch(status, (value) => {
     <div flex items-center justify-center h-full flex-col gap-6>
       <button rounded-full p-4
         bg="gray/10 dark:white/20 hover:gray/20 dark:hover:white/30 active:gray/30 dark:active:white/20"
-        transition="all 500 ease-in-out" outline="2 solid offset-4" @click="toggle = !toggle" :class="[
-          toggle ? 'outline-green-500 dark:outline-green-500' : 'outline-red-500/50 dark:outline-red-500/50',
+        transition="all 500 ease-in-out" outline="3 solid offset-4" @click="toggle = !toggle" :class="[
+          toggle ? 'outline-green-600 dark:outline-green-400' : 'outline-red-500/50 dark:outline-red-500/50',
         ]">
         <div i-solar:microphone-large-bold-duotone text="[60px]" />
       </button>
-      <AudioAnalyser :stream="stream" :bars="32" v-slot="{ frequencies }">
+      <AudioAnalyser :stream="stream" :bars="24" v-slot="{ frequencies }">
         <AudioVisualizerBars :frequencies="frequencies" h-20 :bars-class="'bg-black dark:bg-white'" opacity-50 />
       </AudioAnalyser>
     </div>
