@@ -12,7 +12,7 @@ const props = withDefaults(defineProps<{
   maxFreq: 4000 // Default human voice upper bound (~255Hz)
 })
 
-const frequencies = ref<number[]>([])
+const frequencies = ref<number[]>(Array(props.bars).fill(0))
 
 onMounted(() => {
   handleAnalyze()

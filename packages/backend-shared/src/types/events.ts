@@ -18,7 +18,13 @@ export interface WebSocketEvents {
     authenticated: boolean
   }
   'input:voice': {
-    audio: ArrayBuffer
+    audio: string
+  }
+  'input:model-preload': {
+    model: string
+  }
+  'output:model-loaded': {
+    model: string
   }
 }
 

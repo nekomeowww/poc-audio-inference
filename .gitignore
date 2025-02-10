@@ -41,6 +41,8 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
+.pixi/
+.venv/
 
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
@@ -53,6 +55,7 @@ web_modules/
 
 # Optional eslint cache
 .eslintcache
+.ruff_cache
 
 # Optional stylelint cache
 .stylelintcache

@@ -1,0 +1,13 @@
+[project]
+authors = [ "Neko Ayaka <neko@ayaka.moe>" ]
+channels = [ "conda-forge" ]
+description = "Add a short description here"
+name = "inference-server"
+platforms = [ "osx-arm64" ]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = "3.13.*"
+pip = ">=25.0.1,<26"

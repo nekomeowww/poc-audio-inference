@@ -1,14 +1,12 @@
 import type { AuthenticatedPeer, WebSocketEvent } from '@streaming/backend-shared/types'
-import type { Peer } from 'crossws'
 import { Format, LogLevel, setGlobalFormat, setGlobalLogLevel, useLogg } from '@guiiai/logg'
 import { createApp, createRouter, defineWebSocketHandler } from 'h3'
 
+import { handle } from './controllers/ws/v1/handler'
+import { send } from './utils/websocket'
+
 setGlobalFormat(Format.Pretty)
 setGlobalLogLevel(LogLevel.Log)
-
-function send(peer: Peer, event: WebSocketEvent) {
-  peer.send(JSON.stringify(event))
-}
 
 function main() {
   const appLogger = useLogg('App').useGlobalConfig()
@@ -50,7 +48,13 @@ function main() {
         send(peer, { type: 'error', data: { message: 'not authenticated' } })
       }
 
-      // TODO: implement
+      try {
+        handle(event, peers.get(peer.id)!)
+      }
+      catch (error) {
+        websocketLogger.withFields({ peer: peer.id }).withError(error).error('an error occurred')
+        send(peer, { type: 'error', data: { message: 'An error occurred' } })
+      }
     },
     error: (peer, error) => {
       websocketLogger.withFields({ peer: peer.id }).withError(error).error('an error occurred')
