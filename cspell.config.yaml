@@ -3,19 +3,127 @@ ignorePaths: []
 dictionaryDefinitions: []
 dictionaries: []
 words:
+  - apimachinery
+  - bmatcuk
+  - bodyclose
+  - bufconn
+  - bufnet
+  - Causef
+  - clientgoscheme
+  - containedctx
+  - contextcheck
+  - copyloopvar
   - crossws
+  - cyclop
+  - dall
   - defu
   - demi
+  - depguard
+  - doublestar
+  - dupl
+  - durationcheck
+  - durationpb
+  - err113
+  - errcheck
+  - errchkjson
+  - errname
+  - errorlint
+  - evanphx
+  - execinquery
+  - exhaustive
+  - exhaustruct
+  - exportloopref
+  - fatcontext
+  - finalizer
+  - finalizers
+  - Finalzer
+  - forcetypeassert
   - formkit
+  - funlen
+  - gci
+  - genclient
+  - ginkgolinter
+  - gochecknoglobals
+  - gochecknoinits
+  - gocognit
+  - goconst
+  - gocritic
+  - gocyclo
+  - godot
+  - godox
+  - gofmt
+  - gofumpt
+  - goimports
+  - gomnd
+  - goopenai
+  - gosec
+  - gosimple
+  - govet
   - guiiai
+  - healthz
+  - ineffassign
   - intlify
+  - ireturn
+  - jsonpatch
+  - kubebuilder
   - listhen
+  - lll
   - logg
+  - maintidx
+  - metav1
+  - misspell
+  - multierror
+  - nakedret
+  - nekomeowww
+  - nestif
+  - nilerr
+  - nilfunc
+  - nilnil
+  - nlreturn
+  - nolint
+  - nolintlint
+  - nosniff
+  - nosprintfhostport
   - ofetch
+  - paralleltest
+  - perfsprint
+  - prealloc
+  - predeclared
+  - printcolumn
+  - protoutils
+  - ptypes
+  - readyz
+  - reassign
+  - revive
+  - samber
+  - sashabaranov
+  - stabilityai
+  - staticcheck
+  - strconv
+  - stretchr
+  - stylecheck
+  - subresource
+  - tagalign
+  - tagliatelle
   - taze
+  - testpackage
+  - tolerations
+  - typecheck
+  - unconvert
   - unhead
+  - unmarshalled
+  - Unmarshaller
+  - Unmarshallers
   - unocss
+  - unparam
   - unplugin
+  - unused
+  - usestdlibvars
+  - utilruntime
+  - varnamelen
   - vueuse
+  - whitespace
+  - wrapcheck
+  - wsl
 ignoreWords: []
 import: []
