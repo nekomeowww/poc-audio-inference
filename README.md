@@ -36,9 +36,13 @@ pnpm dev
 .
 ├── apps     # Frontend applications
 │   └── streaming-web
+├── infra     # Infrastructure related
+│   └── go
+│       └── operator # Kubernetes streaming-backend-operator
 ├── packages # Shared packages
 │   └── backend-shared
 ├── services # Backend services
+│   ├── inference-server
 │   └── streaming-backend
 ├── cspell.config.yaml  # Spell check config
 ├── eslint.config.mjs   # ESLint config
@@ -54,6 +58,35 @@ You can always start any of the needed apps, packages or services by running eit
 
 - `pnpm -r --filter=./apps/streaming-web dev` for frontend
 - `pnpm -r --filter=./services/streaming-backend dev` for backend
+- `cd services/inference-server && pixi run start` for inference server
+
+## Deployment
+
+### Build image with `docker buildx`
+
+```shell
+docker buildx build --platform linux/arm64 --load . -f ./apps/streaming-web/Dockerfile -t test.sizigi.local/streaming-audio/web:0.0.1
+docker buildx build --platform linux/arm64 --load . -f ./services/streaming-backend/Dockerfile -t test.sizigi.local/streaming-audio/backend:0.0.1
+docker buildx build --platform linux/arm64 --load . -f ./services/inference-server/Dockerfile -t test.sizigi.local/streaming-audio/inference-server:0.0.1
+```
+
+> [!NOTE]
+>
+> For x86_64 (amd64)
+>
+> ```
+> docker buildx build --platform linux/arm64 --load . -f ./apps/streaming-web/Dockerfile -t test.sizigi.local/streaming-audio/web:0.0.1
+> docker buildx build --platform linux/arm64 --load . -f ./services/streaming-backend/Dockerfile -t test.sizigi.local/streaming-audio/backend:0.0.1
+> docker buildx build --platform linux/arm64 --load . -f ./services/inference-server/Dockerfile -t test.sizigi.local/streaming-audio/inference-server:0.0.1
+> ```
+
+### Deploy with `docker`
+
+```shell
+docker run -dit -p 8080:80 test.sizigi.local/streaming-audio/web:0.0.1
+docker run -dit -p 8081:8081 test.sizigi.local/streaming-audio/backend:0.0.1
+docker run -dit -p 8082:8082 test.sizigi.local/streaming-audio/inference-server:0.0.1
+```
 
 ## Terms
 
