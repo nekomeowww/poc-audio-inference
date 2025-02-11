@@ -3,11 +3,20 @@ authors = [ "Neko Ayaka <neko@ayaka.moe>" ]
 channels = [ "conda-forge" ]
 description = "Add a short description here"
 name = "inference-server"
-platforms = [ "osx-arm64" ]
+platforms = [
+  "osx-arm64",
+  "linux-aarch64"
+]
 version = "0.1.0"
 
 [tasks]
+install = "pip install -r requirements.txt"
+start = "python ./src/app.py"
 
 [dependencies]
 python = "3.13.*"
 pip = ">=25.0.1,<26"
+
+[pypi-dependencies]
+flask-cors = ">=5.0.0, <6"
+flask = ">=3.1.0, <4"

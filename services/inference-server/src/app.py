@@ -61,5 +61,5 @@ def health_check():
     return {'status': 'healthy'}, 200
 
 if __name__ == '__main__':
-    logger.info("Starting inference server on port 8081")
-    app.run(host='0.0.0.0', port=8081, debug=True)
+    logger.info("Starting inference server on port 8082")
+    app.run(host='0.0.0.0', port=8082, debug=True)

@@ -13,6 +13,7 @@ words:
   - containedctx
   - contextcheck
   - copyloopvar
+  - corev
   - crossws
   - cyclop
   - dall
@@ -87,6 +88,7 @@ words:
   - ofetch
   - paralleltest
   - perfsprint
+  - pixi
   - prealloc
   - predeclared
   - printcolumn
@@ -97,9 +99,12 @@ words:
   - revive
   - samber
   - sashabaranov
+  - sizigi
+  - sizigistudios
   - stabilityai
   - staticcheck
   - strconv
+  - streamingaudiov1alpha1
   - stretchr
   - stylecheck
   - subresource
@@ -121,6 +126,8 @@ words:
   - usestdlibvars
   - utilruntime
   - varnamelen
+  - voicemodel
+  - voicemodels
   - vueuse
   - whitespace
   - wrapcheck
