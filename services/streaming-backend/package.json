@@ -3,8 +3,8 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "listhen -w --ws --port 8080 ./src/index.ts",
-    "start": "listhen --ws --port 8080 ./src/index.ts",
+    "dev": "listhen -w --ws --port 8081 ./src/index.ts",
+    "start": "listhen --ws --port 8081 ./src/index.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
