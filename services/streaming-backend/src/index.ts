@@ -1,6 +1,6 @@
 import type { AuthenticatedPeer, WebSocketEvent } from '@streaming/backend-shared/types'
 import { Format, LogLevel, setGlobalFormat, setGlobalLogLevel, useLogg } from '@guiiai/logg'
-import { createApp, createRouter, defineWebSocketHandler } from 'h3'
+import { createApp, createRouter, defineEventHandler, defineWebSocketHandler } from 'h3'
 
 import { handle } from './controllers/ws/v1/handler'
 import { send } from './utils/websocket'
@@ -63,6 +63,10 @@ function main() {
       websocketLogger.withFields({ peer: peer.id, details, activePeers: peers.size }).log('closed')
       peers.delete(peer.id)
     },
+  }))
+
+  router.get('/health', defineEventHandler(() => {
+    return { status: 'healthy' }
   }))
 
   return app
