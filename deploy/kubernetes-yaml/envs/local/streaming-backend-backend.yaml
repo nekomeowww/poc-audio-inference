@@ -46,3 +46,6 @@ spec:
             - containerPort: 8081
               protocol: TCP
               name: http
+          env:
+            - name: HOST
+              value: "0.0.0.0"
