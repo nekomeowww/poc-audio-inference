@@ -16,7 +16,7 @@ export default defineConfig({
     proxy: {
       // Proxy WebSockets
       '/ws': {
-        target: 'http://localhost:8080',
+        target: 'http://localhost:8081',
         ws: true,
         rewriteWsOrigin: true,
         autoRewrite: true,
