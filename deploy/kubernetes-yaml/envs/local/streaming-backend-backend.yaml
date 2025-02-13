@@ -26,10 +26,10 @@ spec:
           resources:
             limits:
               cpu: "500m"
-              memory: "200M"
+              memory: "1000M"
             requests:
               cpu: "500m"
-              memory: "100M"
+              memory: "500M"
           livenessProbe:
             httpGet:
               path: /health
