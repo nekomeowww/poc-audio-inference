@@ -1,3 +1,11 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: backend-secret
+type: Opaque
+data:
+  REDIS_PASSWORD: cGFzc3dvcmQ=
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -23,6 +31,18 @@ spec:
         - name: worker-container
           image: test.sizigi.local/streaming-audio/backend:0.0.1
           imagePullPolicy: IfNotPresent
+          env:
+            - name: HOST
+              value: "0.0.0.0"
+            - name: REDIS_HOST
+              value: "redis"
+            - name: REDIS_PORT
+              value: "6379"
+            - name: REDIS_USER
+              value: "default"
+          envFrom:
+            - secretRef:
+                name: backend-secret
           resources:
             limits:
               cpu: "500m"
@@ -30,6 +50,10 @@ spec:
             requests:
               cpu: "500m"
               memory: "500M"
+          ports:
+            - containerPort: 8081
+              protocol: TCP
+              name: http
           livenessProbe:
             httpGet:
               path: /health
@@ -42,10 +66,83 @@ spec:
               port: 8081
             initialDelaySeconds: 5
             timeoutSeconds: 5
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: redis-secret
+type: Opaque
+data:
+  REDIS_PASSWORD: cGFzc3dvcmQ=
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: redis
+spec:
+  selector:
+    matchLabels:
+      app: redis
+  serviceName: redis
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: redis
+    spec:
+      containers:
+        - name: worker-container
+          image: redis
+          imagePullPolicy: IfNotPresent
+          command:
+            - /bin/sh
+          args:
+            - -c
+            - >
+              echo "requirepass $(REDIS_PASSWORD)" | docker-entrypoint.sh -
+          envFrom:
+            - secretRef:
+                name: redis-secret
           ports:
-            - containerPort: 8081
+            - containerPort: 6379
               protocol: TCP
-              name: http
-          env:
-            - name: HOST
-              value: "0.0.0.0"
+              name: redis
+          readinessProbe:
+            failureThreshold: 5
+            exec:
+              command:
+                - /bin/sh
+                - -c
+                - redis-cli -e -a $REDIS_PASSWORD --no-auth-warning ping
+            initialDelaySeconds: 5
+            timeoutSeconds: 10
+          livenessProbe:
+            failureThreshold: 5
+            exec:
+              command:
+                - /bin/sh
+                - -c
+                - redis-cli -e -a $REDIS_PASSWORD --no-auth-warning ping
+            initialDelaySeconds: 5
+            timeoutSeconds: 10
+          resources:
+            limits:
+              cpu: "500m"
+              memory: "1000M"
+            requests:
+              cpu: "500m"
+              memory: "500M"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis
+spec:
+  clusterIP: None
+  selector:
+    app: redis
+  ports:
+    - port: 6379
+      targetPort: 6379
+      protocol: TCP
+      name: redis

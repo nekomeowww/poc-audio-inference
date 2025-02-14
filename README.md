@@ -54,10 +54,24 @@ pnpm dev
 ├── README.md
 ```
 
+## Development
+
+### Start essential depending services
+
+```shell
+docker compose up -d
+```
+
+### Configure before starting
+
+1. Copy `.env.example` to `.env.local` and configure the environment variables.
+
+### Start each server
+
 You can always start any of the needed apps, packages or services by running either:
 
-- `pnpm -r --filter=./apps/streaming-web dev` for frontend
-- `pnpm -r --filter=./services/streaming-backend dev` for backend
+- `pnpm -F @streaming/web dev` for frontend
+- `pnpm -F @streaming/backend dev` for backend
 - `cd services/inference-server && pixi run start` for inference server
 
 ## Deployment
@@ -84,7 +98,7 @@ docker buildx build --platform linux/arm64 --load . -f ./services/inference-serv
 
 ```shell
 docker run -dit -p 8080:80 test.sizigi.local/streaming-audio/web:0.0.1
-docker run -dit -p 8081:8081 test.sizigi.local/streaming-audio/backend:0.0.1
+docker run -dit -p 8081:8081 -e REDIS_URL='URL of Redis' test.sizigi.local/streaming-audio/backend:0.0.1
 docker run -dit -p 8082:8082 test.sizigi.local/streaming-audio/inference-server:0.0.1
 ```
 

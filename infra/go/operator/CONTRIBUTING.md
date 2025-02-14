@@ -80,7 +80,7 @@ docker buildx build --platform linux/arm64 --load . -f ./services/inference-serv
 >
 > ```shell
 > docker run -dit -p 8080:80 test.sizigi.local/streaming-audio/web:0.0.1
-> docker run -dit -p 8081:8081 test.sizigi.local/streaming-audio/backend:0.0.1
+> docker run -dit -p 8081:8081 -e REDIS_URL='URL of Redis' test.sizigi.local/streaming-audio/backend:0.0.1
 > docker run -dit -p 8082:8082 test.sizigi.local/streaming-audio/inference-server:0.0.1
 > ```
 

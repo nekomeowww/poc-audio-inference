@@ -21,6 +21,7 @@ words:
   - defu
   - demi
   - depguard
+  - dotenvx
   - doublestar
   - dupl
   - durationcheck
@@ -97,6 +98,7 @@ words:
   - ptypes
   - readyz
   - reassign
+  - requirepass
   - revive
   - samber
   - sashabaranov

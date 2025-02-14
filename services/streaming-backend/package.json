@@ -3,7 +3,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "listhen -w --ws --port 8081 ./src/index.ts",
+    "dev": "dotenvx run -f .env -f .env.local --overload --debug --ignore=MISSING_ENV_FILE -- listhen -w --ws --port 8081 ./src/index.ts",
     "start": "listhen --ws --port 8081 ./src/index.ts",
     "typecheck": "tsc --noEmit"
   },
@@ -14,6 +14,7 @@
     "defu": "^6.1.4",
     "h3": "^1.15.0",
     "listhen": "^1.9.0",
-    "ofetch": "^1.4.1"
+    "ofetch": "^1.4.1",
+    "redis": "^4.7.0"
   }
 }

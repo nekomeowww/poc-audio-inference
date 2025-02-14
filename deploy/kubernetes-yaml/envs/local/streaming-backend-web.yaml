@@ -23,13 +23,10 @@ spec:
         - name: worker-container
           image: test.sizigi.local/streaming-audio/web:0.0.1
           imagePullPolicy: IfNotPresent
-          resources:
-            limits:
-              cpu: "500m"
-              memory: "200M"
-            requests:
-              cpu: "500m"
-              memory: "100M"
+          ports:
+            - containerPort: 80
+              protocol: TCP
+              name: http
           livenessProbe:
             httpGet:
               path: /
@@ -42,7 +39,10 @@ spec:
               port: 80
             initialDelaySeconds: 5
             timeoutSeconds: 5
-          ports:
-            - containerPort: 80
-              protocol: TCP
-              name: http
+          resources:
+            limits:
+              cpu: "500m"
+              memory: "200M"
+            requests:
+              cpu: "500m"
+              memory: "100M"

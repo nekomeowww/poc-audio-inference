@@ -23,15 +23,10 @@ spec:
         - name: worker-container
           image: test.sizigi.local/streaming-audio/inference-server:0.0.1
           imagePullPolicy: IfNotPresent
-          resources:
-            limits:
-              cpu: "500m"
-              memory: "200M"
-              nvidia.com/gpu: "1"
-            requests:
-              cpu: "500m"
-              memory: "100M"
-              nvidia.com/gpu: "1"
+          ports:
+            - containerPort: 8082
+              protocol: TCP
+              name: http
           livenessProbe:
             httpGet:
               path: /health
@@ -44,7 +39,12 @@ spec:
               port: 8082
             initialDelaySeconds: 5
             timeoutSeconds: 5
-          ports:
-            - containerPort: 8082
-              protocol: TCP
-              name: http
+          resources:
+            limits:
+              cpu: "500m"
+              memory: "200M"
+              nvidia.com/gpu: "1"
+            requests:
+              cpu: "500m"
+              memory: "100M"
+              nvidia.com/gpu: "1"
