@@ -10,6 +10,7 @@
     "redhat.vscode-yaml",
     "Vue.volar",
     "antfu.goto-alias",
-    "lokalise.i18n-ally"
+    "lokalise.i18n-ally",
+    "golang.go"
   ]
 }
