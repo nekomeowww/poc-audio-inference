@@ -155,3 +155,6 @@ components.d.ts
 # Kubebuilder & Hack Built application files
 !dist/install.yaml
 dist/
+
+# Docker Compose related
+.redis
