@@ -37,8 +37,8 @@ import (
 	metricsserver "sigs.k8s.io/controller-runtime/pkg/metrics/server"
 	"sigs.k8s.io/controller-runtime/pkg/webhook"
 
-	streamingaudiov1alpha1 "github.com/sizigi/streaming-audio-backend/infra/go/operator/api/v1alpha1"
-	"github.com/sizigi/streaming-audio-backend/infra/go/operator/internal/controller"
+	streamingaudiov1alpha1 "github.com/nekomeowww/streaming-audio-backend/infra/go/operator/api/v1alpha1"
+	"github.com/nekomeowww/streaming-audio-backend/infra/go/operator/internal/controller"
 	// +kubebuilder:scaffold:imports
 )
 
@@ -184,7 +184,7 @@ func main() {
 		WebhookServer:          webhookServer,
 		HealthProbeBindAddress: probeAddr,
 		LeaderElection:         enableLeaderElection,
-		LeaderElectionID:       "e3ef260b.sizigistudios.com",
+		LeaderElectionID:       "e3ef260b.ayaka.io",
 		// LeaderElectionReleaseOnCancel defines if the leader should step down voluntarily
 		// when the Manager ends. This requires the binary to immediately end when the
 		// Manager is stopped, otherwise, this setting is unsafe. Setting this significantly

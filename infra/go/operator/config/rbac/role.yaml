@@ -4,29 +4,29 @@ kind: ClusterRole
 metadata:
   name: manager-role
 rules:
-- apiGroups:
-  - streaming-audio.sizigistudios.com
-  resources:
-  - voicemodels
-  verbs:
-  - create
-  - delete
-  - get
-  - list
-  - patch
-  - update
-  - watch
-- apiGroups:
-  - streaming-audio.sizigistudios.com
-  resources:
-  - voicemodels/finalizers
-  verbs:
-  - update
-- apiGroups:
-  - streaming-audio.sizigistudios.com
-  resources:
-  - voicemodels/status
-  verbs:
-  - get
-  - patch
-  - update
+  - apiGroups:
+      - streaming-audio.ayaka.io
+    resources:
+      - voicemodels
+    verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+  - apiGroups:
+      - streaming-audio.ayaka.io
+    resources:
+      - voicemodels/finalizers
+    verbs:
+      - update
+  - apiGroups:
+      - streaming-audio.ayaka.io
+    resources:
+      - voicemodels/status
+    verbs:
+      - get
+      - patch
+      - update

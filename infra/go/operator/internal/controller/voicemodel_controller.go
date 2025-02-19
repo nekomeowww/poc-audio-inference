@@ -25,8 +25,8 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/reconcile"
 
-	streamingaudiov1alpha1 "github.com/sizigi/streaming-audio-backend/infra/go/operator/api/v1alpha1"
-	"github.com/sizigi/streaming-audio-backend/infra/go/operator/pkg/operator"
+	streamingaudiov1alpha1 "github.com/nekomeowww/streaming-audio-backend/infra/go/operator/api/v1alpha1"
+	"github.com/nekomeowww/streaming-audio-backend/infra/go/operator/pkg/operator"
 )
 
 // VoiceModelReconciler reconciles a VoiceModel object
@@ -36,9 +36,9 @@ type VoiceModelReconciler struct {
 	Recorder record.EventRecorder
 }
 
-// +kubebuilder:rbac:groups=streaming-audio.sizigistudios.com,resources=voicemodels,verbs=get;list;watch;create;update;patch;delete
-// +kubebuilder:rbac:groups=streaming-audio.sizigistudios.com,resources=voicemodels/status,verbs=get;update;patch
-// +kubebuilder:rbac:groups=streaming-audio.sizigistudios.com,resources=voicemodels/finalizers,verbs=update
+// +kubebuilder:rbac:groups=streaming-audio.ayaka.io,resources=voicemodels,verbs=get;list;watch;create;update;patch;delete
+// +kubebuilder:rbac:groups=streaming-audio.ayaka.io,resources=voicemodels/status,verbs=get;update;patch
+// +kubebuilder:rbac:groups=streaming-audio.ayaka.io,resources=voicemodels/finalizers,verbs=update
 
 // Reconcile is part of the main kubernetes reconciliation loop which aims to
 // move the current state of the cluster closer to the desired state.

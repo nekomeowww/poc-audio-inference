@@ -10,7 +10,7 @@
 1. Clone the repository
 
 ```shell
-git clone git@github.com:sizigi/streaming-audio-backend.git
+git clone git@github.com:nekomeowww/streaming-audio-backend.git
 cd streaming-audio-backend
 ```
 
@@ -79,9 +79,9 @@ You can always start any of the needed apps, packages or services by running eit
 ### Build image with `docker buildx`
 
 ```shell
-docker buildx build --platform linux/arm64 --load . -f ./apps/streaming-web/Dockerfile -t test.sizigi.local/streaming-audio/web:0.0.1
-docker buildx build --platform linux/arm64 --load . -f ./services/streaming-backend/Dockerfile -t test.sizigi.local/streaming-audio/backend:0.0.1
-docker buildx build --platform linux/arm64 --load . -f ./services/inference-server/Dockerfile -t test.sizigi.local/streaming-audio/inference-server:0.0.1
+docker buildx build --platform linux/arm64 --load . -f ./apps/streaming-web/Dockerfile -t test.nekomeowww.local/streaming-audio/web:0.0.1
+docker buildx build --platform linux/arm64 --load . -f ./services/streaming-backend/Dockerfile -t test.nekomeowww.local/streaming-audio/backend:0.0.1
+docker buildx build --platform linux/arm64 --load . -f ./services/inference-server/Dockerfile -t test.nekomeowww.local/streaming-audio/inference-server:0.0.1
 ```
 
 > [!NOTE]
@@ -89,17 +89,17 @@ docker buildx build --platform linux/arm64 --load . -f ./services/inference-serv
 > For x86_64 (amd64)
 >
 > ```
-> docker buildx build --platform linux/arm64 --load . -f ./apps/streaming-web/Dockerfile -t test.sizigi.local/streaming-audio/web:0.0.1
-> docker buildx build --platform linux/arm64 --load . -f ./services/streaming-backend/Dockerfile -t test.sizigi.local/streaming-audio/backend:0.0.1
-> docker buildx build --platform linux/arm64 --load . -f ./services/inference-server/Dockerfile -t test.sizigi.local/streaming-audio/inference-server:0.0.1
+> docker buildx build --platform linux/arm64 --load . -f ./apps/streaming-web/Dockerfile -t test.nekomeowww.local/streaming-audio/web:0.0.1
+> docker buildx build --platform linux/arm64 --load . -f ./services/streaming-backend/Dockerfile -t test.nekomeowww.local/streaming-audio/backend:0.0.1
+> docker buildx build --platform linux/arm64 --load . -f ./services/inference-server/Dockerfile -t test.nekomeowww.local/streaming-audio/inference-server:0.0.1
 > ```
 
 ### Deploy with `docker`
 
 ```shell
-docker run -dit -p 8080:80 test.sizigi.local/streaming-audio/web:0.0.1
-docker run -dit -p 8081:8081 -e REDIS_URL='URL of Redis' test.sizigi.local/streaming-audio/backend:0.0.1
-docker run -dit -p 8082:8082 test.sizigi.local/streaming-audio/inference-server:0.0.1
+docker run -dit -p 8080:80 test.nekomeowww.local/streaming-audio/web:0.0.1
+docker run -dit -p 8081:8081 -e REDIS_URL='URL of Redis' test.nekomeowww.local/streaming-audio/backend:0.0.1
+docker run -dit -p 8082:8082 test.nekomeowww.local/streaming-audio/inference-server:0.0.1
 ```
 
 ### Deploy with `kind` bootstrapped Kubernetes cluster
@@ -164,9 +164,9 @@ helm upgrade -i gpu-operator fake-gpu-operator/fake-gpu-operator --namespace gpu
 #### Load the images into kind cluster
 
 ```shell
-kind load docker-image test.sizigi.local/streaming-audio/web:0.0.1 --name kind-streaming-backend
-kind load docker-image test.sizigi.local/streaming-audio/backend:0.0.1 --name kind-streaming-backend
-kind load docker-image test.sizigi.local/streaming-audio/inference-server:0.0.1 --name kind-streaming-backend
+kind load docker-image test.nekomeowww.local/streaming-audio/web:0.0.1 --name kind-streaming-backend
+kind load docker-image test.nekomeowww.local/streaming-audio/backend:0.0.1 --name kind-streaming-backend
+kind load docker-image test.nekomeowww.local/streaming-audio/inference-server:0.0.1 --name kind-streaming-backend
 ```
 
 #### Create the corresponding resources

@@ -27,7 +27,7 @@ import (
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
-	streamingaudiov1alpha1 "github.com/sizigi/streaming-audio-backend/infra/go/operator/api/v1alpha1"
+	streamingaudiov1alpha1 "github.com/nekomeowww/streaming-audio-backend/infra/go/operator/api/v1alpha1"
 )
 
 var _ = Describe("VoiceModel Controller", func() {

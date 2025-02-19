@@ -1,7 +1,7 @@
 # This rule is not used by the project operator itself.
 # It is provided to allow the cluster admin to help manage permissions for users.
 #
-# Grants permissions to create, update, and delete resources within the streaming-audio.sizigistudios.com.
+# Grants permissions to create, update, and delete resources within the streaming-audio.ayaka.io.
 # This role is intended for users who need to manage these resources
 # but should not control RBAC or manage permissions for others.
 
@@ -13,21 +13,21 @@ metadata:
     app.kubernetes.io/managed-by: kustomize
   name: voicemodel-editor-role
 rules:
-- apiGroups:
-  - streaming-audio.sizigistudios.com
-  resources:
-  - voicemodels
-  verbs:
-  - create
-  - delete
-  - get
-  - list
-  - patch
-  - update
-  - watch
-- apiGroups:
-  - streaming-audio.sizigistudios.com
-  resources:
-  - voicemodels/status
-  verbs:
-  - get
+  - apiGroups:
+      - streaming-audio.ayaka.io
+    resources:
+      - voicemodels
+    verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+  - apiGroups:
+      - streaming-audio.ayaka.io
+    resources:
+      - voicemodels/status
+    verbs:
+      - get

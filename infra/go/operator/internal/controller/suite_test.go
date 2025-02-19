@@ -32,7 +32,7 @@ import (
 	logf "sigs.k8s.io/controller-runtime/pkg/log"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
-	streamingaudiov1alpha1 "github.com/sizigi/streaming-audio-backend/infra/go/operator/api/v1alpha1"
+	streamingaudiov1alpha1 "github.com/nekomeowww/streaming-audio-backend/infra/go/operator/api/v1alpha1"
 	// +kubebuilder:scaffold:imports
 )
 

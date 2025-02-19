@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: worker-container
-          image: test.sizigi.local/streaming-audio/web:0.0.1
+          image: test.nekomeowww.local/streaming-audio/web:0.0.1
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80

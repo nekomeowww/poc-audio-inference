@@ -59,9 +59,9 @@ helm upgrade -i gpu-operator fake-gpu-operator/fake-gpu-operator --namespace gpu
 #### Build essential workload images
 
 ```shell
-docker buildx build --platform linux/arm64 --load . -f ./apps/streaming-web/Dockerfile -t test.sizigi.local/streaming-audio/web:0.0.1
-docker buildx build --platform linux/arm64 --load . -f ./services/streaming-backend/Dockerfile -t test.sizigi.local/streaming-audio/backend:0.0.1
-docker buildx build --platform linux/arm64 --load . -f ./services/inference-server/Dockerfile -t test.sizigi.local/streaming-audio/inference-server:0.0.1
+docker buildx build --platform linux/arm64 --load . -f ./apps/streaming-web/Dockerfile -t test.nekomeowww.local/streaming-audio/web:0.0.1
+docker buildx build --platform linux/arm64 --load . -f ./services/streaming-backend/Dockerfile -t test.nekomeowww.local/streaming-audio/backend:0.0.1
+docker buildx build --platform linux/arm64 --load . -f ./services/inference-server/Dockerfile -t test.nekomeowww.local/streaming-audio/inference-server:0.0.1
 ```
 
 > [!NOTE]
@@ -69,9 +69,9 @@ docker buildx build --platform linux/arm64 --load . -f ./services/inference-serv
 > For x86_64 (amd64)
 >
 > ```
-> docker buildx build --platform linux/arm64 --load . -f ./apps/streaming-web/Dockerfile -t test.sizigi.local/streaming-audio/web:0.0.1
-> docker buildx build --platform linux/arm64 --load . -f ./services/streaming-backend/Dockerfile -t test.sizigi.local/streaming-audio/backend:0.0.1
-> docker buildx build --platform linux/arm64 --load . -f ./services/inference-server/Dockerfile -t test.sizigi.local/streaming-audio/inference-server:0.0.1
+> docker buildx build --platform linux/arm64 --load . -f ./apps/streaming-web/Dockerfile -t test.nekomeowww.local/streaming-audio/web:0.0.1
+> docker buildx build --platform linux/arm64 --load . -f ./services/streaming-backend/Dockerfile -t test.nekomeowww.local/streaming-audio/backend:0.0.1
+> docker buildx build --platform linux/arm64 --load . -f ./services/inference-server/Dockerfile -t test.nekomeowww.local/streaming-audio/inference-server:0.0.1
 > ```
 
 > [!NOTE]
@@ -79,17 +79,17 @@ docker buildx build --platform linux/arm64 --load . -f ./services/inference-serv
 > To test the deployment of the images
 >
 > ```shell
-> docker run -dit -p 8080:80 test.sizigi.local/streaming-audio/web:0.0.1
-> docker run -dit -p 8081:8081 -e REDIS_URL='URL of Redis' test.sizigi.local/streaming-audio/backend:0.0.1
-> docker run -dit -p 8082:8082 test.sizigi.local/streaming-audio/inference-server:0.0.1
+> docker run -dit -p 8080:80 test.nekomeowww.local/streaming-audio/web:0.0.1
+> docker run -dit -p 8081:8081 -e REDIS_URL='URL of Redis' test.nekomeowww.local/streaming-audio/backend:0.0.1
+> docker run -dit -p 8082:8082 test.nekomeowww.local/streaming-audio/inference-server:0.0.1
 > ```
 
 #### Load the images into kind cluster
 
 ```shell
-kind load docker-image test.sizigi.local/streaming-audio/web:0.0.1 --name kind-streaming-backend
-kind load docker-image test.sizigi.local/streaming-audio/backend:0.0.1 --name kind-streaming-backend
-kind load docker-image test.sizigi.local/streaming-audio/inference-server:0.0.1 --name kind-streaming-backend
+kind load docker-image test.nekomeowww.local/streaming-audio/web:0.0.1 --name kind-streaming-backend
+kind load docker-image test.nekomeowww.local/streaming-audio/backend:0.0.1 --name kind-streaming-backend
+kind load docker-image test.nekomeowww.local/streaming-audio/inference-server:0.0.1 --name kind-streaming-backend
 ```
 
 #### Build and install CRD to local cluster
@@ -214,7 +214,7 @@ its dependencies.
 Users can just run `kubectl apply -f <URL for YAML BUNDLE>` to install the project, i.e.:
 
 ```sh
-kubectl apply -f https://raw.githubusercontent.com/sizigi/streaming-audio-backend/main/infra/go/operator/dist/install.yaml
+kubectl apply -f https://raw.githubusercontent.com/nekomeowww/streaming-audio-backend/main/infra/go/operator/dist/install.yaml
 ```
 
 > [!NOTE]

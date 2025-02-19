@@ -2,19 +2,19 @@
 # This file is used to track the info used to scaffold your project
 # and allow the plugins properly work.
 # More info: https://book.kubebuilder.io/reference/project-config.html
-domain: sizigistudios.com
+domain: ayaka.io
 layout:
-- go.kubebuilder.io/v4
+  - go.kubebuilder.io/v4
 projectName: operator
-repo: github.com/sizigi/streaming-audio-backend/infra/go/operator
+repo: github.com/nekomeowww/streaming-audio-backend/infra/go/operator
 resources:
-- api:
-    crdVersion: v1
-    namespaced: true
-  controller: true
-  domain: sizigistudios.com
-  group: streaming-audio
-  kind: VoiceModel
-  path: github.com/sizigi/streaming-audio-backend/infra/go/operator/api/v1alpha1
-  version: v1alpha1
+  - api:
+      crdVersion: v1
+      namespaced: true
+    controller: true
+    domain: ayaka.io
+    group: streaming-audio
+    kind: VoiceModel
+    path: github.com/nekomeowww/streaming-audio-backend/infra/go/operator/api/v1alpha1
+    version: v1alpha1
 version: "3"

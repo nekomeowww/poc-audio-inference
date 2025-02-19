@@ -25,7 +25,7 @@ import (
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 
-	"github.com/sizigi/streaming-audio-backend/infra/go/operator/test/utils"
+	"github.com/nekomeowww/streaming-audio-backend/infra/go/operator/test/utils"
 )
 
 var (

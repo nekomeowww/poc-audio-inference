@@ -1,4 +1,4 @@
-apiVersion: streaming-audio.sizigistudios.com/v1alpha1
+apiVersion: streaming-audio.ayaka.io/v1alpha1
 kind: VoiceModel
 metadata:
   labels:
@@ -10,7 +10,7 @@ spec:
     spec:
       containers:
         - name: worker-container
-          image: test.sizigi.local/streaming-audio/inference-server:0.0.1
+          image: test.nekomeowww.local/streaming-audio/inference-server:0.0.1
           imagePullPolicy: IfNotPresent
           resources:
             limits:
