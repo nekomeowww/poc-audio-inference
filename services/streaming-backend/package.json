@@ -1,5 +1,5 @@
 {
-  "name": "@streaming/backend",
+  "name": "@audio-inference/backend",
   "type": "module",
   "private": true,
   "scripts": {
@@ -8,8 +8,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@audio-inference/backend-shared": "workspace:^",
     "@guiiai/logg": "^1.0.7",
-    "@streaming/backend-shared": "workspace:^",
     "crossws": "^0.3.3",
     "defu": "^6.1.4",
     "h3": "^1.15.0",

@@ -2,7 +2,7 @@
 import { nanoid } from 'nanoid'
 import { useUserMedia, useWebSocket } from '@vueuse/core'
 import { ref, computed, watch, toRef, onUnmounted } from 'vue'
-import type { WebSocketEvent } from '@streaming/backend-shared/types'
+import type { WebSocketEvent } from '@audio-inference/backend-shared/types'
 
 import { blobToArrayBuffer, blobToDataURL, arrayBufferToBase64 } from '../utils/binary'
 import AudioAnalyser from '../components/AudioAnalyser.vue'

@@ -1,4 +1,4 @@
-# `streaming-audio-backend`
+# `poc-audio-inference`
 
 ## Pre-requisites
 
@@ -10,8 +10,8 @@
 1. Clone the repository
 
 ```shell
-git clone git@github.com:nekomeowww/streaming-audio-backend.git
-cd streaming-audio-backend
+git clone git@github.com:nekomeowww/poc-audio-inference.git
+cd poc-audio-inference
 ```
 
 2. Install dependencies
@@ -70,8 +70,8 @@ docker compose up -d
 
 You can always start any of the needed apps, packages or services by running either:
 
-- `pnpm -F @streaming/web dev` for frontend
-- `pnpm -F @streaming/backend dev` for backend
+- `pnpm -F @audio-inference/web dev` for frontend
+- `pnpm -F @audio-inference/backend dev` for backend
 - `cd services/inference-server && pixi run start` for inference server
 
 ## Deployment

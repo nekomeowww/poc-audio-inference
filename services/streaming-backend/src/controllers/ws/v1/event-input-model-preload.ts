@@ -1,4 +1,4 @@
-import type { AuthenticatedPeer, WebSocketEvents } from '@streaming/backend-shared/types'
+import type { AuthenticatedPeer, WebSocketEvents } from '@audio-inference/backend-shared/types'
 import { env } from 'node:process'
 import { ofetch } from 'ofetch'
 import { send } from '../../../utils/websocket'

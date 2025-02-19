@@ -8,7 +8,7 @@ COPY . /app
 WORKDIR /app
 
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
-RUN pnpm run -F @streaming/web build
+RUN pnpm run -F @audio-inference/web build
 
 FROM nginx:stable-alpine AS production-stage
 

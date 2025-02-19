@@ -10,4 +10,4 @@ WORKDIR /app
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile
 
 EXPOSE 8081
-CMD [ "pnpm", "-F", "@streaming/backend", "start" ]
+CMD [ "pnpm", "-F", "@audio-inference/backend", "start" ]

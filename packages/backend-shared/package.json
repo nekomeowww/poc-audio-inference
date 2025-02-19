@@ -1,5 +1,5 @@
 {
-  "name": "@streaming/backend-shared",
+  "name": "@audio-inference/backend-shared",
   "type": "module",
   "private": true,
   "license": "UNLICENSED",

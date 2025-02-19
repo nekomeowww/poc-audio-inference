@@ -1,4 +1,4 @@
-import type { AuthenticatedPeer, WebSocketEvent } from '@streaming/backend-shared/types'
+import type { AuthenticatedPeer, WebSocketEvent } from '@audio-inference/backend-shared/types'
 import { handleInputModelPreload } from './event-input-model-preload'
 import { handleInputVoice } from './event-input-voice'
 

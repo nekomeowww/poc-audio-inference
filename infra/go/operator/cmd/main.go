@@ -37,8 +37,8 @@ import (
 	metricsserver "sigs.k8s.io/controller-runtime/pkg/metrics/server"
 	"sigs.k8s.io/controller-runtime/pkg/webhook"
 
-	streamingaudiov1alpha1 "github.com/nekomeowww/streaming-audio-backend/infra/go/operator/api/v1alpha1"
-	"github.com/nekomeowww/streaming-audio-backend/infra/go/operator/internal/controller"
+	streamingaudiov1alpha1 "github.com/nekomeowww/poc-audio-inference/infra/go/operator/api/v1alpha1"
+	"github.com/nekomeowww/poc-audio-inference/infra/go/operator/internal/controller"
 	// +kubebuilder:scaffold:imports
 )
 

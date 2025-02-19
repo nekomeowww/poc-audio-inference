@@ -1,4 +1,4 @@
-import type { AuthenticatedPeer, WebSocketEvent } from '@streaming/backend-shared/types'
+import type { AuthenticatedPeer, WebSocketEvent } from '@audio-inference/backend-shared/types'
 import type { InputLayer } from 'h3'
 import { useLogg } from '@guiiai/logg'
 import { defineWebSocketHandler } from 'h3'

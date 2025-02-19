@@ -6,7 +6,7 @@ domain: ayaka.io
 layout:
   - go.kubebuilder.io/v4
 projectName: operator
-repo: github.com/nekomeowww/streaming-audio-backend/infra/go/operator
+repo: github.com/nekomeowww/poc-audio-inference/infra/go/operator
 resources:
   - api:
       crdVersion: v1
@@ -15,6 +15,6 @@ resources:
     domain: ayaka.io
     group: streaming-audio
     kind: VoiceModel
-    path: github.com/nekomeowww/streaming-audio-backend/infra/go/operator/api/v1alpha1
+    path: github.com/nekomeowww/poc-audio-inference/infra/go/operator/api/v1alpha1
     version: v1alpha1
 version: "3"
